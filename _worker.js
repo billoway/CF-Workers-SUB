@@ -722,8 +722,8 @@ async function KV(request, env, txt = 'ADD.txt', guest) {
 								button.disabled = true;
 
 								// 获取textarea内容和原始内容
-								const textarea = document.getElementById('content');
-								if (!textarea) {
+								const textarea_text = document.getElementById('content');
+								if (!textarea_text) {
 									throw new Error('找不到文本编辑区域');
 								}
 
