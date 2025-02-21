@@ -731,8 +731,8 @@ async function KV(request, env, txt = 'ADD.txt', guest) {
 								let newContent;
 								let originalContent;
 								try {
-									newContent = textarea.value || '';
-									originalContent = textarea.defaultValue || '';
+									newContent = textarea_text.value || '';
+									originalContent = textarea_text.defaultValue || '';
 								} catch (e) {
 									console.error('获取内容错误:', e);
 									throw new Error('无法获取编辑内容');
