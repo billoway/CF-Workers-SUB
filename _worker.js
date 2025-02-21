@@ -692,8 +692,8 @@ async function KV(request, env, txt = 'ADD.txt', guest) {
 						
 					if (document.querySelector('.editor')) {
 						let timer;
-						const textarea = document.getElementById('content');
-						const originalContent = textarea.value;
+						var textarea_input = document.getElementById('content');
+						const originalContent = textarea_input.value;
 		
 						function goBack() {
 							const currentUrl = window.location.href;
@@ -702,8 +702,8 @@ async function KV(request, env, txt = 'ADD.txt', guest) {
 						}
 		
 						function replaceFullwidthColon() {
-							const text = textarea.value;
-							textarea.value = text.replace(/：/g, ':');
+							const text = textarea_input.value;
+							textarea_input.value = text.replace(/：/g, ':');
 						}
 						
 						function saveContent(button) {
@@ -798,8 +798,8 @@ async function KV(request, env, txt = 'ADD.txt', guest) {
 							}
 						}
 		
-						textarea.addEventListener('blur', saveContent);
-						textarea.addEventListener('input', () => {
+						textarea_input.addEventListener('blur', saveContent);
+						textarea_input.addEventListener('input', () => {
 							clearTimeout(timer);
 							timer = setTimeout(saveContent, 5000);
 						});
